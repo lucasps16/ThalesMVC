@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <h1 class="mt-4">Employee List</h1>
+    <div class="d-flex justify-content-end mt-3">
+        <form class="d-flex" role="search" #form="ngForm" (ngSubmit)="onFormSubmit(form)">
+            <input class="form-control me-2" type="search" placeholder="Employee id" aria-label="Search" name="employee_id" [(ngModel)]="employee.id">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+    </div>
+    
+    <ng-container *ngIf="employees">
+        <table class="table table-bordered mt-3">
+            <thead>
+                <tr>
+                    <th>Employee Id</th>
+                    <th>Name</th>
+                    <th>Salary</th>
+                    <th>Yearly Salary</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let employee of employees">
+                    <td>{{employee.id}}</td>
+                    <td>{{employee.name}}</td>
+                    <td>{{employee.salary}}</td>
+                    <td>{{employee.yearlySalary}}</td>
+                    <td>{{employee.age}}</td>
+            </tbody>
+        </table>
+    </ng-container>
+</div>
