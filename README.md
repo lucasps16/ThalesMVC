@@ -8,11 +8,7 @@ ThalesMVC is a full-stack web application developed using Visual Studio 2022, .N
 - [Project Structure](#project-structure)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-- [Running the Application](#running-the-application)
-- [Unit Tests](#unit-tests)
-- [Contributing](#contributing)
-- [License](#license)
+  - [Running the application](#Running-the-application)
 
 ## Overview
 
@@ -37,7 +33,7 @@ Ensure you have the following tools installed on your machine:
 - [Node.js](https://nodejs.org/)
 - [Angular CLI](https://cli.angular.io/)
 
-### Installation
+### Running the application
 
 1. Clone the repository.
 2. Open **ThalesMVCAngular.sln** with Visual Studio 2022.
