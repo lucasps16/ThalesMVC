@@ -11,13 +11,13 @@ namespace ThalesMVCAngular.Server.Controllers
     {
         private readonly IEmployeeRepository _employeeRepository;
 
-        public EmployeesController(IEmployeeRepository employeeRepository)
+        public EmployeesController(IEmployeeRepository employeeRepository) // Dependency Injection
         {
             _employeeRepository = employeeRepository;
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetEmployees()
+        public async Task<IActionResult> GetEmployees() //Gets all employees from the repository and returns them as a list of EmployeeDTO
         {
             var employees = await _employeeRepository.GetEmployees();
             var response = new List<EmployeeDTO>();
@@ -38,7 +38,7 @@ namespace ThalesMVCAngular.Server.Controllers
 
         [HttpGet]
         [Route("{id}")]
-        public async Task<IActionResult> GetEmployee(int id)
+        public async Task<IActionResult> GetEmployee(int id) //Gets a single employee from the repository and returns it as an EmployeeDTO
         {
             var employee = await _employeeRepository.GetEmployee(id);
             var response = new EmployeeDTO
@@ -52,7 +52,7 @@ namespace ThalesMVCAngular.Server.Controllers
             return Ok(response);
         }
 
-        private int GetYearlySalary(int salary)
+        private int GetYearlySalary(int salary) //Calculates the yearly salary of an employee
         {
             return salary * 12;
         }

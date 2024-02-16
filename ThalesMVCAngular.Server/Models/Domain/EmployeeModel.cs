@@ -1,6 +1,6 @@
 ﻿namespace ThalesMVCAngular.Server.Models.Domain
 {
-    public class EmployeeModel
+    public class EmployeeModel //This is the model that represents an employee
     {
        
         public int Id { get; set; }

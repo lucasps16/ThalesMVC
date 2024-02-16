@@ -1,6 +1,6 @@
 ﻿namespace ThalesMVCAngular.Server.Models.DTO
 {
-    public class EmployeeDTO
+    public class EmployeeDTO //This is the model that represents an employee as a Data Transfer Object (DTO)
     {
 
         public int Id { get; set; }

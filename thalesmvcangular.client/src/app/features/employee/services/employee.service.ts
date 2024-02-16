@@ -16,7 +16,6 @@ export class EmployeeService {
   }
 
   getEmployeeById(id: number): Observable<Employee[]> {
-    //TODO: return employeeas an Employee[] array
     return this.http.get<Employee>(`${environment.apiBaseUrl}/employees/${id}`).pipe(
       map((employee: Employee) => [employee]), // Convert the single employee to an array
       catchError((error: any) => {

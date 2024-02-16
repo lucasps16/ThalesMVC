@@ -16,11 +16,11 @@ export class EmployeeListComponent implements OnInit{
       
    }
    ngOnInit(): void {
-    this.loadEmployees(); // Load all employees on component initialization
+    this.loadEmployees(); // Load all employees on component load
   }
 
   onFormSubmit(form: NgForm) {
-    this.loadEmployeesById(); // Load employees based on the submitted ID
+    this.loadEmployeesById(); //Load employee by ID on form submit
   }
 
   private loadEmployees() {
@@ -28,9 +28,9 @@ export class EmployeeListComponent implements OnInit{
       next: (response) => {
         this.employees = response;
       },
-      error: (error) => {
+      error: (error) => { //If an error occurs, log it to the console and set the employees array to an empty array
         console.error('Error fetching employees:', error);
-        this.employees = []; // Handle error by setting employees to an empty array
+        this.employees = [];
       }
     });
   }
@@ -45,7 +45,7 @@ export class EmployeeListComponent implements OnInit{
       },
       error: (error) => {
         console.error(`Error fetching employee with ID ${this.employee.id}:`, error);
-        this.employees = []; // Handle error by setting employees to an empty array
+        this.employees = []; 
       }
     });
   }
